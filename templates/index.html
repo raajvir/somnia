@@ -17,6 +17,7 @@
             type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
     </handlers>
 </system.webServer>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,17 +38,20 @@
     <script>
         document.getElementById("body").style.backgroundImage = 'url("static/images/stars.svg")';
     </script>
-    <div id="container" class="disappear">
-        <h2>Welcome to <b>Somnia</b></h2>
-        <div class="buttons" class="disappear">
-            <div class="sq_btn disappear" role="button" onclick="play(0)">
-                10 min
-            </div>
-            <div class="sq_btn disappear" role="button" onclick="play(1)">
-                25 min
+    <div class="cont-container">
+        <div id="container" class="disappear">
+            <h2>Welcome to <b>Somnia</b></h2>
+            <div class="buttons">
+                <div class="sq_btn" role="button" onclick="play(0)">
+                    10 min
+                </div>
+                <div class="sq_btn" role="button" onclick="play(1)">
+                    25 min
+                </div>
             </div>
         </div>
     </div>
+
     <div class="instructions" id="instructions">
         <h1 id="alternating"></h1>
     </div>

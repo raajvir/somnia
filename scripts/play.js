@@ -1,6 +1,19 @@
+document,getElementById("play10").addEventListener("click", play(0));
+document,getElementById("play20").addEventListener("click", play(1));
+
 let wakeLock = null;
 document.getElementById("body").style.backgroundImage = 'url("static/images/stars.svg")';
 // document.getElementsByClassName("instructions").style.display = 'none';
+
+/* regForm.onsubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(regForm);
+
+    console.log("Form Data");
+    for (let obj of formData) {
+        console.log(obj);
+    }
+}; */
 
 function startAll() {
     launchFullScreen(document.documentElement);
