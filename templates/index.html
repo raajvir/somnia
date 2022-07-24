@@ -31,27 +31,32 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="scripts/nosleep.js"></script>
+    <script src="../scripts/nosleep.js"></script>
 </head>
 
 <body id="body">
     <script>
         document.getElementById("body").style.backgroundImage = 'url("static/images/stars.svg")';
     </script>
-    <div class="cont-container">
-        <div id="container" class="disappear">
-            <h2>Welcome to <b>Somnia</b></h2>
-            <div class="buttons">
-                <div class="sq_btn" role="button" onclick="play(0)">
-                    10 min
-                </div>
-                <div class="sq_btn" role="button" onclick="play(1)">
-                    25 min
-                </div>
+    <div id="cont-container" class="disappear">
+        <h2>Welcome to <b>Somnia</b>, {{ name }}</h2>
+        <div class="sq_btn" role="button" onclick="play(0)">
+            <h4>Start Sleep</h4>
+            <span>Optimized for you, with AI</span>
+        </div>
+        <a href="/optimiser">Log session</a>
+    </div>
+    <div id="container" class="disappear">
+        <h3>Manually start sleep session</h3>
+        <div class="buttons">
+            <div class="sq_btn" role="button" onclick="play(0)">
+                10 min
+            </div>
+            <div class="sq_btn" role="button" onclick="play(1)">
+                25 min
             </div>
         </div>
     </div>
-
     <div class="instructions" id="instructions">
         <h1 id="alternating"></h1>
     </div>
@@ -75,6 +80,6 @@
     <img src="static/images/outicircles.svg" alt="" srcset="" id="outC">
     <!-- <img src="static/images/stars.svg" alt="" srcset="" id="bg_stars" class="disappear"> -->
 </body>
-<script src="scripts/play.js"></script>
+<script src="{{url_for('static', filename='scripts/play.js')}}"></script>
 
 </html>

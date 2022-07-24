@@ -36,65 +36,73 @@
 </head>
 
 <body id="body">
-    <form id="regForm">
+    <form id="regForm" method="post" action="/optimiser">
         <!-- <h1>Register:</h1> -->
         <!-- One "tab" for each step in the form: -->
         <div class="tab">
             <h1>What should I call you?</h1>
-            <input placeholder="" oninput="this.className = ''" name="name">
+            <input placeholder="" oninput="this.className = ''" name="name" value="j">
         </div>
         <div class="tab">
             <h1>How old are you?</h1>
-            <input placeholder="" oninput="this.className = ''" name="age" type="number">
+            <input placeholder="" oninput="this.className = ''" name="age" type="number" value="23">
         </div>
         <div class="tab">
             <h1>How do you identify yourself?</h1>
             <!-- <input placeholder="" oninput="this.className = ''" name="gender" type=""> -->
             <select oninput="this.className = ''" name="gender">
-                <option value="0">Female</option>
+                <option value="0" selected>Female</option>
                 <option value="1">Male</option>
                 <option value="0.5">Rather not say</option>
             </select>
         </div>
         <div class="tab">
             <h1>How many meals do you have a day?</h1>
-            <input placeholder="" oninput="this.className = ''" name="meals" type="number">
+            <input placeholder="" oninput="this.className = ''" name="meals" type="number" value="3">
         </div>
         <div class="tab">
             <h1>Do you have any physical illnesses?</h1>
             <select oninput="this.className = ''" name="illness">
-                <option value="0">Yes</option>
+                <option value="0" selected>Yes</option>
                 <option value="1">No</option>
             </select>
+        </div>
+        <div class="tab">
+            <h1>How much screentime in a day?</h1>
+            <input placeholder="" oninput="this.className = ''" name="screentime" type="number" value="3">
         </div>
         <div class="tab">
             <h1>Do you use a blue-light filter?</h1>
             <select oninput="this.className = ''" name="bl_filter">
                 <option value="0">Yes</option>
                 <option value="1">No</option>
-                <option value="0.5">Sometimes</option>
+                <option value="0.5" selected>Sometimes</option>
             </select>
         </div>
         <div class="tab">
             <h1>How many hours do you excercise a week?</h1>
-            <input placeholder="" oninput="this.className = ''" name="exercise" type="number">
+            <input placeholder="" oninput="this.className = ''" name="exercise" type="number" value="2">
         </div>
         <div class="tab">
             <h1>Do you smoke or drink regularly?</h1>
             <select oninput="this.className = ''" name="smoke_drink">
-                <option value="0">Yes</option>
+                <option value="0" selected>Yes</option>
                 <option value="1">No</option>
                 <option value="0.5">Sometimes</option>
             </select>
         </div>
         <div class="tab">
             <h1>Do you consume any of these beverages everyday?</h1>
-            <select oninput="this.className = ''" name="smoke_drink">
-                <option value="1">Coffee</option>
+            <select oninput="this.className = ''" name="beverage">
+                <option value="1" selected>Coffee</option>
                 <option value="0.8">Tea</option>
                 <option value="2">Both</option>
                 <option value="0">None</option>
             </select>
+        </div>
+        <div class="tab">
+            <h1>How many hours do you sleep every day?</h1>
+            <input placeholder="" oninput="this.className = ''" name="sleep_time" type="number" value="6">
         </div>
         <br>
         <div style="overflow:auto;">
@@ -105,6 +113,8 @@
         </div>
         <!-- Circles which indicates the steps of the form: -->
         <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
