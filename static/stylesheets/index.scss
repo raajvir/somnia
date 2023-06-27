@@ -144,7 +144,8 @@ body {
     max-height: 80vw;
     max-width: 80vw;
 
-    background: radial-gradient(50% 50% at 50% 50%, #7ccfff 0%, #00a3ff 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #FF6666 0%, #FF8A00 100%);
+    ;
     // filter: blur(2em);
 
     animation: grow 5.45s ease infinite;
@@ -329,17 +330,21 @@ body {
 
 @keyframes grow {
   0% {
-    filter: blur(0em) brightness(0);
+    width: 30vh;
+    height: 30vh;
+    filter: blur(2em) brightness(0.1);
   }
 
   40% {
     width: 80vh;
     height: 80vh;
-    filter: blur(0em) brightness(1);
+    filter: blur(2em) brightness(1);
   }
 
   100% {
-    filter: blur(0em) brightness(0);
+    width: 30vh;
+    height: 30vh;
+    filter: blur(2em) brightness(0.1);
   }
 }
 

@@ -147,44 +147,64 @@ async function initiate(time) {
     var vol = 0.20;
     music.volume = vol;
     music.play()
-    // Animation element
-    const element = document.getElementById("animationElement");
+    var interval = 200; // 200ms interval
 
-    // Initial and final values
-    const initialValue = 5.45;
-    const finalValue = 10;
 
-    // Calculate the increment value per second
-    const duration = time; // The total duration you want to increase the animation duration over in seconds
-    const incrementPerSec = (finalValue - initialValue) / duration;
+    beatLength = 5.546
+    document.getElementById("circle").style.animationDuration = (String(beatLength) + "s");
 
-    // The variable that is going to be increased
-    let variable = initialValue;
-    document.getElementById("circle").style.animationDuration = (String(variable) + "s");
-    // Update animation duration every second
-    const interval = setInterval(() => {
-        // Increase the variable
-        variable += incrementPerSec;
+    if (time === 8) {
+        var arrReps = [11, 9, 9, 8, 7, 6, 5, 5, 4, 4]
+        for (let i = 0; i < arrReps.length; i++) {
+            for (let j = 0; j < arrReps[i]; j++) {
+                docVal = (String(beatLength) + "s");
+                document.getElementById("circle").style.animationDuration = docVal;
+                await timer(beatLength * 1000);
+                /* var fadeout = setInterval(
+                    function () {
+                        // Reduce volume by 0.05 as long as it is above 0
+                        // This works as long as you start with a multiple of 0.05!
+                        if (vol < 0) {
+                            vol += 0.05;
+                            music.volume = vol;
+                            console.log('increase')
+                        }
+                        else {
+                            // Stop the setInterval when 0 is reached
+                            clearInterval(fadeout);
+                        }
+                    }, (beatLength * 0.4));
+                var fadeout = setInterval(
+                    function () {
+                        // Reduce volume by 0.05 as long as it is above 0
+                        // This works as long as you start with a multiple of 0.05!
+                        if (vol > 0.05) {
+                            vol -= 0.05;
+                            music.volume = vol;
+                            console.log('decrease')
+                        }
+                        else {
+                            // Stop the setInterval when 0 is reached
+                            clearInterval(fadeout);
+                        }
+                    }, (beatLength * 0.6)); */
+            }
+            beatLength = beatLength * 1.07;
+        }
+    }
 
-        // Limit the value to the final value
-        variable = Math.min(variable, finalValue);
-
-        // Apply the new duration to the CSS animation
-        element.style.animationDuration = variable + "s";
-    }, 1000);
-
-    // Stop the interval after the total duration
-    setTimeout(() => {
-        clearInterval(interval);
-
-        // Set the variable to the final value to correct for any inaccuracy
-        variable = finalValue;
-
-        // Apply the final value to the CSS animation
-        document.getElementById("circle").style.animationDuration = variable + "s";
-
-        console.log("Finished. Final value: " + variable);
-    }, duration * 1000);
+    else if (time === 20) {
+        var arrReps = [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 4]
+        for (let i = 0; i < arrReps.length; i++) {
+            for (let j = 0; j < arrReps[i]; j++) {
+                docVal = (String(beatLength) + "s");
+                document.getElementById("circle").style.animationDuration = docVal;
+                await timer(beatLength * 1000);
+            }
+            beatLength = beatLength * 1.038;
+        }
+    }
+    endAll()
 }
 
 async function restart() {

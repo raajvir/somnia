@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>playjs test</title>
+</head>
+
+<body>
+
+    <button onclick="slowIncrease(5000);">
+        asdfadsf
+    </button>
+    <div class="circle"></div>
+    <style>
+        .circle {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            animation: ;
+        }
+    </style>
+    <script>
+        function changeAnimationDuration(time) {
+            // Define the element with the animation
+            const element = document.getElementById("animationElement");
+
+            // Define initial and final durations (in seconds)
+            const initialDuration = 5.45;
+            const finalDuration = 10;
+
+            // Define the total time for the change (20 minutes in milliseconds)
+            const totalTime = 20 * 60 * 1000;
+
+            // Calculate the increment per second
+            const incrementPerSec = (finalDuration - initialDuration) / (totalTime / 1000);
+
+            // Variable to store the current duration
+            let currentDuration = initialDuration;
+
+            // Set the initial duration
+            element.style.animationDuration = `${currentDuration}s`;
+
+            // Create an interval to increase the duration every second
+            const intervalId = setInterval(() => {
+                // Increase the duration
+                currentDuration += incrementPerSec;
+
+                // If the final duration is reached, clear the interval and set the duration to the final value
+                if (currentDuration >= finalDuration) {
+                    clearInterval(intervalId);
+                    currentDuration = finalDuration;
+                }
+
+                // Update the animation duration
+                element.style.animationDuration = `${currentDuration}s`;
+            }, 1000);
+        }
+
+        // Call the function to start changing the animation duration
+        changeAnimationDuration(20);
+
+
+
+        /* async function slowIncrease(duration) {
+            // Initial and final values
+            const initialValue = 5.45;
+            const finalValue = 10;
+            // The total duration you want to increase the animation duration over in seconds
+            const incrementPerSec = (finalValue - initialValue) / duration;
+
+            // The variable that is going to be increased
+            let variable = initialValue;
+            // Update animation duration every second
+            const interval = setInterval(() => {
+                // Increase the variable
+                variable += incrementPerSec;
+
+                // Limit the value to the final value
+                variable = Math.min(variable, finalValue);
+                console.log(variable);
+            }, 1000);
+
+            // Stop the interval after the total duration
+            setTimeout(() => {
+                clearInterval(interval);
+
+                // Set the variable to the final value to correct for any inaccuracy
+                variable = finalValue;
+                
+                await delay(variable)
+
+                console.log("Finished. Final value: " + variable);
+            }, duration * 1000);
+        } */
+
+        // Use the function
+ // Increase from 5.45 to 10 over 5000 milliseconds (5 seconds)
+    </script>
+</body>
+
+</html>

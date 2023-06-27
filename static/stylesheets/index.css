@@ -144,7 +144,7 @@ body #circle {
   height: 80vh;
   max-height: 80vw;
   max-width: 80vw;
-  background: radial-gradient(50% 50% at 50% 50%, #7ccfff 0%, #00a3ff 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #FF6666 0%, #FF8A00 100%);
   -webkit-animation: grow 5.45s ease infinite;
           animation: grow 5.45s ease infinite;
 }
@@ -353,35 +353,43 @@ body #container .buttons .sq_btn:hover {
 
 @-webkit-keyframes grow {
   0% {
-    -webkit-filter: blur(0em) brightness(0);
-            filter: blur(0em) brightness(0);
+    width: 30vh;
+    height: 30vh;
+    -webkit-filter: blur(2em) brightness(0.1);
+            filter: blur(2em) brightness(0.1);
   }
   40% {
     width: 80vh;
     height: 80vh;
-    -webkit-filter: blur(0em) brightness(1);
-            filter: blur(0em) brightness(1);
+    -webkit-filter: blur(2em) brightness(1);
+            filter: blur(2em) brightness(1);
   }
   100% {
-    -webkit-filter: blur(0em) brightness(0);
-            filter: blur(0em) brightness(0);
+    width: 30vh;
+    height: 30vh;
+    -webkit-filter: blur(2em) brightness(0.1);
+            filter: blur(2em) brightness(0.1);
   }
 }
 
 @keyframes grow {
   0% {
-    -webkit-filter: blur(0em) brightness(0);
-            filter: blur(0em) brightness(0);
+    width: 30vh;
+    height: 30vh;
+    -webkit-filter: blur(2em) brightness(0.1);
+            filter: blur(2em) brightness(0.1);
   }
   40% {
     width: 80vh;
     height: 80vh;
-    -webkit-filter: blur(0em) brightness(1);
-            filter: blur(0em) brightness(1);
+    -webkit-filter: blur(2em) brightness(1);
+            filter: blur(2em) brightness(1);
   }
   100% {
-    -webkit-filter: blur(0em) brightness(0);
-            filter: blur(0em) brightness(0);
+    width: 30vh;
+    height: 30vh;
+    -webkit-filter: blur(2em) brightness(0.1);
+            filter: blur(2em) brightness(0.1);
   }
 }
 
